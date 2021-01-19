@@ -14,6 +14,9 @@ class ImpiegatoSuCommissione extends Impiegato
 
     public function __construct($init_imp, $nome_progetto, $commissione_progetto)
     {
+        if($nome_progetto == ""){
+            throw new Exception ("Il nome progetto non può essere vuoto!");
+        }
         parent::__construct($init_imp);
         $this->nome_progetto = $nome_progetto;
         $this->commissione_progetto = $commissione_progetto;

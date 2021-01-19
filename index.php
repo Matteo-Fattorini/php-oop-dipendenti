@@ -14,11 +14,29 @@ $dataset = [
     "compenso" => 0,
 ];
 
-$prova = new ImpiegatoSalariato($dataset,20,5);
 
-$prova->calcola_compenso();
-$prova->to_string();
+try {
+    $impiegato_salariato = new ImpiegatoSalariato($dataset,0,10);
+}
+catch (Exception $e){
+    echo("Non hai inserito i dati giusti nella creazione di Impiegato Salaritato");
+    echo "<br>";
+    echo ($e->getMessage());
+    echo "<br>";
+    echo "<br>" . "<br>";
 
+}
+try {
+    $impiegato_commissione = new ImpiegatoSuCommissione($dataset,"",500);
+}
+catch (Exception $e){
+    echo("Non hai inserito i dati giusti nella creazione di Impiegato su commissione");
+    echo "<br>";
+    echo ($e->getMessage());
+    echo "<br>" . "<br>";
+    
+
+}
 
 
 
